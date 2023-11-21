@@ -18,15 +18,15 @@ from ._configuration import (
 
 if TYPE_CHECKING:
     # pylint: disable=unused-import,ungrouped-imports
-    from azure.core import PipelineClient
+    from azure.core import AsyncPipelineClient
 
-    from ._serialization import Deserializer, Serializer
+    from .._serialization import Deserializer, Serializer
 
 
 class DeviceUpdateClientMixinABC(ABC):
     """DO NOT use this class. It is for internal typing use only."""
 
-    _client: "PipelineClient"
+    _client: "AsyncPipelineClient"
     _config: DeviceUpdateClientConfiguration
     _serialize: "Serializer"
     _deserialize: "Deserializer"
@@ -35,7 +35,7 @@ class DeviceUpdateClientMixinABC(ABC):
 class DeviceManagementClientMixinABC(ABC):
     """DO NOT use this class. It is for internal typing use only."""
 
-    _client: "PipelineClient"
+    _client: "AsyncPipelineClient"
     _config: DeviceManagementClientConfiguration
     _serialize: "Serializer"
     _deserialize: "Deserializer"
@@ -44,7 +44,7 @@ class DeviceManagementClientMixinABC(ABC):
 class InstanceManagementClientMixinABC(ABC):
     """DO NOT use this class. It is for internal typing use only."""
 
-    _client: "PipelineClient"
+    _client: "AsyncPipelineClient"
     _config: InstanceManagementClientConfiguration
     _serialize: "Serializer"
     _deserialize: "Deserializer"
